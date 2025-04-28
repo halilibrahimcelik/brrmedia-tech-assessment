@@ -8,6 +8,8 @@ import Image from 'next/image';
 import { CardMedia } from '@mui/material';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import { Metadata, NextPage } from 'next';
+import Link from 'next/link';
+import { AppRoutes } from '@/types';
 
 export const metadata: Metadata = {
   title: 'Internal Team Dashboard',
@@ -72,9 +74,11 @@ const HomePage: NextPage = () => {
                 );
               })}
             </ul>
-            <Button variant='contained' color='primary'>
-              Go to Dashboard
-            </Button>
+            <Link href={AppRoutes.STAFF_DIRECTORY}>
+              <Button variant='contained' color='primary'>
+                Go to Dashboard
+              </Button>
+            </Link>
           </Stack>
         </CardContent>
       </Card>

@@ -8,7 +8,7 @@ import {
 } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Theme } from './type';
-import { useTheme } from './ThemeContext';
+import { useThemeCtx } from './ThemeContext';
 
 type Props = {
   children: React.ReactNode;
@@ -36,13 +36,13 @@ const getPalette: (mode: Theme) => PaletteOptions = (mode) => {
 
         primary: {
           main: '#651a80',
-          light: '#1976d2',
+          light: '#a63b8f',
           dark: '#651a80',
         },
         secondary: {
-          main: '#c0afee',
-          light: '#f1aac3',
-          dark: '#c0afee',
+          main: '#ff89eb',
+          light: '#bb67ae',
+          dark: '#ff6efa',
         },
         error: {
           main: '#d32f2f',
@@ -65,11 +65,12 @@ const getPalette: (mode: Theme) => PaletteOptions = (mode) => {
           dark: '#1b5e20',
         },
         background: {
-          default: '#ccc1c1',
-          paper: '#7c7592',
+          default: '#eeedf357',
+          paper: '#eeedf3',
         },
+
         text: {
-          primary: '#ffffff',
+          primary: '#111',
           secondary: 'rgba(255, 255, 255, 0.7)',
           disabled: 'rgba(255, 255, 255, 0.5)',
         },
@@ -88,12 +89,12 @@ const getPalette: (mode: Theme) => PaletteOptions = (mode) => {
       return {
         primary: {
           main: '#863da0',
-          light: '#1976d2',
+          light: '#ab79bb',
           dark: '#651a80',
         },
         secondary: {
           main: '#c0afee',
-          light: '#dc004e',
+          light: '#dac1f2',
           dark: '#c0afee',
         },
         error: {
@@ -250,7 +251,7 @@ const getTheme = (mode: Theme) => {
 };
 
 const ThemeProvider: React.FC<Props> = ({ children }) => {
-  const { theme: themeToggle } = useTheme();
+  const { theme: themeToggle } = useThemeCtx();
   const theme = getTheme(themeToggle!);
 
   return (
