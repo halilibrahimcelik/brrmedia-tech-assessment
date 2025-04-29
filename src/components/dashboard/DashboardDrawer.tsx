@@ -130,7 +130,7 @@ const DashboardDrawer: React.FC<Props> = ({ open, setOpen }) => {
         </DrawerHeader>
         <Divider />
         <List>
-          {drawerMenu.map((text, index) => (
+          {drawerMenu.map((text) => (
             <ListItem key={text.id} disablePadding>
               <Link className='w-full' href={text.url}>
                 <ListItemButton>

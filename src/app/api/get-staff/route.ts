@@ -5,7 +5,7 @@ import { delayMS } from '@/utils';
 
 const staffDataPath = path.join(process.cwd(), 'public', 'data', 'staff.json');
 
-export const GET = async (request: Request): Promise<NextResponse> => {
+export const GET = async (): Promise<NextResponse> => {
   try {
     await delayMS(1000); // Simulate delay
     const staffData = await fs.readFile(staffDataPath, 'utf-8');

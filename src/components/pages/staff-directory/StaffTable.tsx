@@ -1,4 +1,5 @@
 'use client';
+//ts-ignore
 import { useQuery } from '@tanstack/react-query';
 import * as React from 'react';
 import Box from '@mui/material/Box';

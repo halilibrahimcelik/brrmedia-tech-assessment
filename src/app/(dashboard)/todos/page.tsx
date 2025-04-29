@@ -9,4 +9,3 @@ const TodosPage: NextPage = () => {
   );
 };
 export default TodosPage;
-('');

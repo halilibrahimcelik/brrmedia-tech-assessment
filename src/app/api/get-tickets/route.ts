@@ -10,7 +10,7 @@ const staffDataPath = path.join(
   'tickets.json'
 );
 
-export const GET = async (request: Request): Promise<NextResponse> => {
+export const GET = async (): Promise<NextResponse> => {
   try {
     await delayMS(1000); // Simulate delay
     const staffData = await fs.readFile(staffDataPath, 'utf-8');

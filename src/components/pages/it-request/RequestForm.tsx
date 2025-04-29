@@ -1,19 +1,10 @@
 'use client';
 import * as Yup from 'yup';
 import React from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { LoadingButton } from '@mui/lab';
 
-import {
-  TextField,
-  MenuItem,
-  Button,
-  Box,
-  Typography,
-  Grid,
-  Stack,
-  Divider,
-} from '@mui/material';
+import { MenuItem, Box, Typography, Grid, Stack, Divider } from '@mui/material';
 import { yupResolver } from '@hookform/resolvers/yup';
 import FormProvider from '@/components/ui/form/FormProvider';
 import RHFTextField from '@/components/ui/form/RHFTextField';
@@ -60,8 +51,6 @@ const RequestForm: React.FC = () => {
   });
   const {
     reset,
-    watch,
-    setValue,
     handleSubmit,
     formState: { isSubmitting },
   } = methods;
@@ -71,7 +60,7 @@ const RequestForm: React.FC = () => {
       await new Promise((resolve) => setTimeout(resolve, 500));
 
       console.log(data);
-      //   reset();
+      reset();
     } catch (error) {
       console.error(error);
     }
