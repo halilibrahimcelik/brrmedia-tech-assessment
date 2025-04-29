@@ -1,5 +1,4 @@
 'use client';
-import { getStaffMembers } from '@/lib/api/staff';
 import { useQuery } from '@tanstack/react-query';
 import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -12,10 +11,11 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-import { StaffMember } from '@/types';
+import { ApiRoutes, StaffMember } from '@/types';
 import { formatDate } from '@/utils';
 import StaffTableHead from './TableHead';
 import TableSkeleton from './TableSkeleton';
+import { fetchedData } from '@/lib/api';
 export interface Data extends StaffMember {}
 export type Order = 'asc' | 'desc';
 
@@ -49,7 +49,7 @@ const StaffTable: React.FC = () => {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const { data, isLoading, error } = useQuery<Data[]>({
     queryKey: ['staff'],
-    queryFn: getStaffMembers,
+    queryFn: () => fetchedData(ApiRoutes.GET_STAFF),
     refetchOnWindowFocus: false,
   });
   const [rows, setRows] = React.useState<Data[]>([]);

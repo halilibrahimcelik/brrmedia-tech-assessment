@@ -14,11 +14,11 @@
    - [x] Info: Name, Role, Email, Status (active/inactive)
    - [x] Bonus: Show “last login”, “Drive storage used”, “device type”
 3. **IT Request Page**
-   - [ ] Form with:
-     - [ ] Issue Type (dropdown)
-     - [ ] Description (textarea)
-     - [ ] File input (simulate upload)
-   - [ ] “Submit Request” button
+   - [x] Form with:
+     - [x] Issue Type (dropdown)
+     - [x] Description (textarea)
+     - [x] File input (simulate upload)
+   - [x] “Submit Request” button
 4. **Tickets Page**
    - [ ] List of submitted tickets
    - [ ] Show: Issue Type, Status (Open, In Progress, Resolved), Created Date

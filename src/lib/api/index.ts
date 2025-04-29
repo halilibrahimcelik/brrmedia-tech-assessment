@@ -1,9 +1,7 @@
-import { ApiRoutes } from '@/types';
-
-export const getStaffMembers = async () => {
+export const fetchedData = async (route: string) => {
   try {
-    const response = await fetch(ApiRoutes.GET_STAFF);
-    console.log('Response:', response);
+    const response = await fetch(route);
+
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }

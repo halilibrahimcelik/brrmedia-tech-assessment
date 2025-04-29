@@ -7,6 +7,7 @@ export enum AppRoutes {
 
 export enum ApiRoutes {
   GET_STAFF = '/api/get-staff',
+  GET_TICKETS = '/api/get-tickets',
 }
 export type StaffMember = {
   id: number;
