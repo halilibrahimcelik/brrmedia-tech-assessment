@@ -34,13 +34,13 @@ type Props = {
 const DashboardDrawer: React.FC<Props> = ({ open, setOpen }) => {
   const drawerMenu = [
     {
-      text: 'Staff Directry',
+      text: 'Staff Directory',
       icon: <Groups3Icon color='primary' />,
       id: 1,
       url: AppRoutes.STAFF_DIRECTORY,
     },
     {
-      text: 'IT Support',
+      text: 'IT Request',
       icon: <LaptopChromebookIcon color='primary' />,
       id: 2,
       url: AppRoutes.IT_REQUEST,

@@ -262,6 +262,13 @@ const getTheme = (mode: Theme) => {
           },
         },
       },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: {
+            color: mode === 'light' ? '#651a80' : 'theme.primary.main', // Set the desired color for the label in light mode
+          },
+        },
+      },
     },
     shape: {
       borderRadius: 8,
