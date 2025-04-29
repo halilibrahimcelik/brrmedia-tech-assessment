@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Complete project report",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "title": "Prepare presentation slides",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "title": "Respond to client emails",
+    "completed": true
+  },
+  {
+    "id": 4,
+    "title": "Update team on project status",
+    "completed": false
+  },
+  {
+    "id": 5,
+    "title": "Schedule team meeting",
+    "completed": true
+  },
+  {
+    "id": 6,
+    "title": "Review code for new feature",
+    "completed": false
+  },
+  {
+    "id": 7,
+    "title": "Fix reported bugs",
+    "completed": false
+  },
+  {
+    "id": 8,
+    "title": "Plan next sprint tasks",
+    "completed": true
+  }
+]

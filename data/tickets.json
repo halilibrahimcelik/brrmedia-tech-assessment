@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "user": "john.doe@example.com",
+    "issue": "Unable to access shared drive",
+    "description": "User reports that they cannot access the shared drive. Error message: 'Access Denied'.",
+    "priority": "high",
+    "status": "open",
+    "createdAt": "2024-10-01T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "user": "jane.smith@example.com",
+    "issue": "Application crash on startup",
+    "description": "User reports that the application crashes immediately after launching.",
+    "priority": "medium",
+    "status": "open",
+    "createdAt": "2024-10-02T09:15:00Z"
+  },
+  {
+    "id": 3,
+    "user": "alice.johnson@example.com",
+    "issue": "Unable to reset password",
+    "description": "User reports that the password reset link is not working.",
+    "priority": "normal",
+    "status": "open",
+    "createdAt": "2024-10-03T14:30:00Z"
+  },
+  {
+    "id": 4,
+    "user": "bob.brown@example.com",
+    "issue": "Email delivery failure",
+    "description": "User reports that emails sent to external clients are bouncing back.",
+    "priority": "high",
+    "status": "open",
+    "createdAt": "2024-10-04T11:00:00Z"
+  },
+  {
+    "id": 5,
+    "user": "charlie.davis@example.com",
+    "issue": "Slow internet connection",
+    "description": "User reports that the internet speed is significantly slower than usual.",
+    "priority": "medium",
+    "status": "open",
+    "createdAt": "2024-10-05T08:45:00Z"
+  },
+  {
+    "id": 6,
+    "user": "diana.evans@example.com",
+    "issue": "Printer not responding",
+    "description": "User reports that the office printer is not responding to print commands.",
+    "priority": "normal",
+    "status": "open",
+    "createdAt": "2024-10-06T10:20:00Z"
+  },
+  {
+    "id": 7,
+    "user": "ethan.foster@example.com",
+    "issue": "Access to restricted folder",
+    "description": "User requests access to a restricted folder for project work.",
+    "priority": "medium",
+    "status": "open",
+    "createdAt": "2024-10-07T13:10:00Z"
+  },
+  {
+    "id": 8,
+    "user": "fiona.green@example.com",
+    "issue": "Software update required",
+    "description": "User reports that their software is outdated and needs an update.",
+    "priority": "normal",
+    "status": "open",
+    "createdAt": "2024-10-08T15:00:00Z"
+  },
+  {
+    "id": 9,
+    "user": "george.harris@example.com",
+    "issue": "System overheating",
+    "description": "User reports that their laptop is overheating during use.",
+    "priority": "high",
+    "status": "open",
+    "createdAt": "2024-10-09T16:45:00Z"
+  },
+  {
+    "id": 10,
+    "user": "hannah.irving@example.com",
+    "issue": "VPN connection failure",
+    "description": "User reports that they are unable to connect to the company VPN.",
+    "priority": "medium",
+    "status": "open",
+    "createdAt": "2024-10-10T18:30:00Z"
+  }
+]

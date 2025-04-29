@@ -7,12 +7,12 @@
 ### Suggested Layout / Pages
 
 1. **Dashboard Page**
-   - [ ] Welcome banner
-   - [ ] Quick summary: Open tickets, tasks pending, latest updates
+   - [x] Welcome banner
+   - [x] Quick summary: Open tickets, tasks pending, latest updates
 2. **Staff Directory Page**
-   - [ ] List of staff (cards or table)
-   - [ ] Info: Name, Role, Email, Status (active/inactive)
-   - [ ] Bonus: Show “last login”, “Drive storage used”, “device type”
+   - [x] List of staff (cards or table)
+   - [x] Info: Name, Role, Email, Status (active/inactive)
+   - [x] Bonus: Show “last login”, “Drive storage used”, “device type”
 3. **IT Request Page**
    - [ ] Form with:
      - [ ] Issue Type (dropdown)

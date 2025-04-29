@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "role": "Manager",
+    "email": "john.doe@example.com",
+    "status": "active",
+    "lastLogin": "2024-10-01T12:00:00Z",
+    "driveUsage": "4.5 GB",
+    "device": "MacBook Pro"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "role": "Developer",
+    "email": "jane.smith@example.com",
+    "status": "active",
+    "lastLogin": "2024-10-02T08:30:00Z",
+    "driveUsage": "2.1 GB",
+    "device": "Dell XPS 13"
+  },
+  {
+    "id": 3,
+    "name": "Alice Johnson",
+    "role": "Designer",
+    "email": "alice.johnson@example.com",
+    "status": "inactive",
+    "lastLogin": "2024-09-28T15:45:00Z",
+    "driveUsage": "1.8 GB",
+    "device": "HP Spectre x360"
+  },
+  {
+    "id": 4,
+    "name": "Bob Brown",
+    "role": "Analyst",
+    "email": "bob.brown@example.com",
+    "status": "active",
+    "lastLogin": "2024-09-30T10:15:00Z",
+    "driveUsage": "3.2 GB",
+    "device": "Lenovo ThinkPad"
+  },
+  {
+    "id": 5,
+    "name": "Charlie Davis",
+    "role": "Support",
+    "email": "charlie.davis@example.com",
+    "status": "inactive",
+    "lastLogin": "2024-09-25T14:20:00Z",
+    "driveUsage": "1.0 GB",
+    "device": "Acer Aspire 5"
+  },
+  {
+    "id": 6,
+    "name": "Diana Evans",
+    "role": "HR",
+    "email": "diana.evans@example.com",
+    "status": "active",
+    "lastLogin": "2024-10-03T09:00:00Z",
+    "driveUsage": "2.8 GB",
+    "device": "Microsoft Surface Pro"
+  },
+  {
+    "id": 7,
+    "name": "Ethan Foster",
+    "role": "Intern",
+    "email": "ethan.foster@example.com",
+    "status": "inactive",
+    "lastLogin": "2024-09-20T11:45:00Z",
+    "driveUsage": "0.5 GB",
+    "device": "HP Pavilion"
+  },
+  {
+    "id": 8,
+    "name": "Fiona Green",
+    "role": "Marketing",
+    "email": "fiona.green@example.com",
+    "status": "active",
+    "lastLogin": "2024-10-04T13:30:00Z",
+    "driveUsage": "3.5 GB",
+    "device": "Dell Inspiron"
+  },
+  {
+    "id": 9,
+    "name": "George Harris",
+    "role": "Consultant",
+    "email": "george.harris@example.com",
+    "status": "inactive",
+    "lastLogin": "2024-09-18T16:10:00Z",
+    "driveUsage": "1.2 GB",
+    "device": "Asus ZenBook"
+  },
+  {
+    "id": 10,
+    "name": "Hannah Irving",
+    "role": "Researcher",
+    "email": "hannah.irving@example.com",
+    "status": "active",
+    "lastLogin": "2024-10-05T08:00:00Z",
+    "driveUsage": "2.9 GB",
+    "device": "MacBook Air"
+  },
+  {
+    "id": 11,
+    "name": "Ian Jackson",
+    "role": "Engineer",
+    "email": "ian.jackson@example.com",
+    "status": "inactive",
+    "lastLogin": "2024-09-22T17:25:00Z",
+    "driveUsage": "1.7 GB",
+    "device": "Samsung Galaxy Book"
+  },
+  {
+    "id": 12,
+    "name": "Julia King",
+    "role": "Administrator",
+    "email": "julia.king@example.com",
+    "status": "active",
+    "lastLogin": "2024-10-06T14:45:00Z",
+    "driveUsage": "4.0 GB",
+    "device": "Google Pixelbook"
+  }
+]

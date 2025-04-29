@@ -15,9 +15,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import Groups3Icon from '@mui/icons-material/Groups3';
-import MailIcon from '@mui/icons-material/Mail';
 import { DRAWER_WIDTH } from '@/constants';
 import { AppBar, DrawerHeader } from './styles';
 import ToggleColorMode from '../ThemeToggle';
@@ -26,6 +24,8 @@ import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
 import BugReportIcon from '@mui/icons-material/BugReport';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import Link from 'next/link';
+import { useMediaQuery } from '@mui/material';
+
 type Props = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   open: boolean;
@@ -60,6 +60,12 @@ const DashboardDrawer: React.FC<Props> = ({ open, setOpen }) => {
   ];
 
   const theme = useTheme();
+  const isMobile = useMediaQuery('(max-width:900px)');
+  React.useEffect(() => {
+    if (isMobile && open) {
+      setOpen(false); // Close the drawer if the screen width is less than 900px
+    }
+  }, [isMobile]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -94,7 +100,7 @@ const DashboardDrawer: React.FC<Props> = ({ open, setOpen }) => {
           </IconButton>
           <div className='flex items-center justify-between w-full'>
             <Typography variant='h6' noWrap component='div'>
-              Persistent drawer
+              Internal Dashboard
             </Typography>
             <ToggleColorMode />
           </div>

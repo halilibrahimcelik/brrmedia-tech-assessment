@@ -79,6 +79,7 @@ const getPalette: (mode: Theme) => PaletteOptions = (mode) => {
         action: {
           active: 'rgba(255, 255, 255, 0.7)',
           hover: 'rgba(255, 255, 255, 0.08)',
+
           selected: 'rgba(255, 255, 255, 0.16)',
           disabled: 'rgba(255, 255, 255, 0.3)',
           disabledBackground: 'rgba(255, 255, 255, 0.12)',
@@ -148,9 +149,6 @@ const getTheme = (mode: Theme) => {
         : 'light'
       : mode;
 
-  console.log('Resolved theme mode:', resolvedMode); // Debugging
-  console.log('Current theme mode:', mode); // Debugging
-
   let theme = createTheme({
     palette: {
       mode: resolvedMode as 'light' | 'dark',
@@ -207,6 +205,15 @@ const getTheme = (mode: Theme) => {
       },
     },
     components: {
+      MuiTableSortLabel: {
+        styleOverrides: {
+          root: {
+            '&:hover': {
+              color: mode === 'light' ? '#651a80' : 'theme.primary.main', // Set hover color for light mode
+            },
+          },
+        },
+      },
       MuiButton: {
         defaultProps: {
           variant: 'contained',
@@ -230,6 +237,28 @@ const getTheme = (mode: Theme) => {
         styleOverrides: {
           root: {
             padding: 16,
+          },
+        },
+      },
+      MuiMenuItem: {
+        styleOverrides: {
+          root: {
+            fontSize: '1rem !important',
+          },
+        },
+      },
+      MuiInputBase: {
+        styleOverrides: {
+          root: {
+            fontSize: '1rem !important',
+          },
+        },
+      },
+
+      MuiSelect: {
+        styleOverrides: {
+          root: {
+            fontSize: '1rem !important',
           },
         },
       },
