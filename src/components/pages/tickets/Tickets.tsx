@@ -2,7 +2,7 @@
 
 import { fetchedData } from '@/lib/api';
 import { ApiRoutes } from '@/types';
-import { useQuery, AnyDataTag } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 
 const Tickets: React.FC = () => {
   const { data, error, isLoading } = useQuery({

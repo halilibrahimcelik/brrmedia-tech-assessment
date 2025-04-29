@@ -64,8 +64,8 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const ToggleColorMode = () => {
   const [checked, setChecked] = React.useState(false);
-  const { mode, setMode } = useColorScheme();
-  const { theme, setTheme } = useThemeCtx();
+  const { setMode } = useColorScheme();
+  const { setTheme } = useThemeCtx();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = event.target.checked;

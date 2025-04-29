@@ -22,23 +22,15 @@ const VisuallyHiddenInput = styled('input')({
   whiteSpace: 'nowrap',
   width: 1,
 });
-const StyledButton = styled(Button)({
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  width: '100%',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
-});
-const RHFUploadFile = ({ name, ...other }: Props) => {
+
+const RHFUploadFile = ({ name }: Props) => {
   const { control, setValue } = useFormContext();
 
   return (
     <Controller
       name={name}
       control={control}
-      render={({ field, fieldState: { error } }) => (
+      render={({ field }) => (
         <div
           style={{
             position: 'relative',

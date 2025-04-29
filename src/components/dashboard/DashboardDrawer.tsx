@@ -65,6 +65,7 @@ const DashboardDrawer: React.FC<Props> = ({ open, setOpen }) => {
     if (isMobile && open) {
       setOpen(false); // Close the drawer if the screen width is less than 900px
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMobile]);
 
   const handleDrawerOpen = () => {

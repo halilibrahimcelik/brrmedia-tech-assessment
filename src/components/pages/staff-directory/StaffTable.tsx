@@ -17,7 +17,7 @@ import { formatDate } from '@/utils';
 import StaffTableHead from './TableHead';
 import TableSkeleton from './TableSkeleton';
 import { fetchedData } from '@/lib/api';
-export interface Data extends StaffMember {}
+export type Data = StaffMember;
 export type Order = 'asc' | 'desc';
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -30,7 +30,7 @@ function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   return 0;
 }
 
-function getComparator<Key extends keyof any>(
+function getComparator<Key extends PropertyKey>(
   order: Order,
   orderBy: Key
 ): (
@@ -45,7 +45,6 @@ function getComparator<Key extends keyof any>(
 const StaffTable: React.FC = () => {
   const [order, setOrder] = React.useState<Order>('asc');
   const [orderBy, setOrderBy] = React.useState<keyof Data>('name');
-  const [selected, setSelected] = React.useState<readonly number[]>([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const { data, isLoading, error } = useQuery<Data[]>({
@@ -68,15 +67,6 @@ const StaffTable: React.FC = () => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
     setOrderBy(property);
-  };
-
-  const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.checked) {
-      const newSelected = rows.map((n) => n.id);
-      setSelected(newSelected);
-      return;
-    }
-    setSelected([]);
   };
 
   const handleChangePage = (event: unknown, newPage: number) => {
@@ -137,17 +127,14 @@ const StaffTable: React.FC = () => {
               }}
             >
               {visibleRows.map((row, index) => {
-                const isItemSelected = selected.includes(row.id);
                 const labelId = `enhanced-table-checkbox-${index}`;
 
                 return (
                   <TableRow
                     hover
                     role='checkbox'
-                    aria-checked={isItemSelected}
                     tabIndex={-1}
                     key={row.id}
-                    selected={isItemSelected}
                     sx={{ cursor: 'pointer' }}
                   >
                     <TableCell
