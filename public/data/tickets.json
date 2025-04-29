@@ -32,7 +32,7 @@
     "issue": "Email delivery failure",
     "description": "User reports that emails sent to external clients are bouncing back.",
     "priority": "high",
-    "status": "open",
+    "status": "closed",
     "createdAt": "2024-10-04T11:00:00Z"
   },
   {

@@ -179,15 +179,18 @@ const getTheme = (mode: Theme) => {
       body1: {
         fontSize: '1.2rem',
         lineHeight: 1.6,
+        color: mode === 'light' ? '#111 !important' : '#fff',
       },
       body2: {
         fontSize: '1rem',
         lineHeight: 1.5,
+        color: mode === 'light' ? '#111 !important' : '#fff',
       },
       caption: {
         fontSize: '0.875rem',
         lineHeight: 1.4,
-        color: 'rgba(0, 0, 0, 0.6)',
+
+        color: mode === 'light' ? '#111 !important' : '#fff ',
       },
       button: {
         textTransform: 'capitalize',
@@ -247,6 +250,7 @@ const getTheme = (mode: Theme) => {
           },
         },
       },
+
       MuiInputBase: {
         styleOverrides: {
           root: {

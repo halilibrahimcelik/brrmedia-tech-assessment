@@ -13,18 +13,20 @@ export type StaffMember = {
   id: number;
   name: string;
   role: string;
-  email: string;
+  issue: string;
+  user: string;
   status: 'active' | 'inactive';
   lastLogin: string;
   driveUsage: string;
   device: string;
 };
+export type Priorty = 'high' | 'medium' | 'normal';
 export type Ticket = {
   id: number;
   user: string; // Email of the user
   issue: string;
   description: string;
-  priority: 'high' | 'medium' | 'normal';
+  priority: Priorty;
   status: 'open' | 'closed';
   createdAt: string; // ISO 8601 date string
 };

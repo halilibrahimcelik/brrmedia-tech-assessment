@@ -6,3 +6,6 @@ export const delayMS = (ms: number) => {
 export const formatDate = (dateString: string) => {
   return format(new Date(dateString), 'MM/dd/yyyy HH:mm');
 };
+export const formatDateWithoutHour = (dateString: string) => {
+  return format(new Date(dateString), 'MM/dd/yyyy');
+};
