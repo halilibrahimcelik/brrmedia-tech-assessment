@@ -24,12 +24,12 @@ export type StaffMember = {
 export type Priorty = 'high' | 'medium' | 'normal';
 export type Ticket = {
   id: number;
-  user: string; // Email of the user
+  user: string;
   issue: string;
   description: string;
   priority: Priorty;
   status: 'open' | 'closed';
-  createdAt: string; // ISO 8601 date string
+  createdAt: string;
 };
 export type Todo = {
   id: number;

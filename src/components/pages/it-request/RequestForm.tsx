@@ -1,6 +1,6 @@
 'use client';
 import * as Yup from 'yup';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Button from '@mui/material/Button';
 import {
@@ -18,6 +18,9 @@ import RHFTextField from '@/components/ui/form/RHFTextField';
 import RHFSelect from '@/components/ui/form/RHFSelectField';
 import RHFUploadFile from '@/components/ui/form/RHFUploadFile';
 import Snackbar, { SnackbarCloseReason } from '@mui/material/Snackbar';
+import { useTickets } from '@/providers/TicketProvider';
+import { Priorty, Ticket } from '@/types';
+import { delayMS, formatDateWithoutHour, generateRandomNumeric } from '@/utils';
 
 type FormValues = {
   email: string;
@@ -28,8 +31,8 @@ type FormValues = {
 };
 
 const RequestForm: React.FC = () => {
-  const [open, setOpen] = React.useState(false);
-
+  const [open, setOpen] = useState(false);
+  const { addTickets } = useTickets();
   const handleOpenSnackbar = () => {
     setOpen(true);
   };
@@ -81,9 +84,19 @@ const RequestForm: React.FC = () => {
 
   const onSubmit = async (data: FormValues) => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await delayMS(700); // Simulate a network delay
       handleOpenSnackbar();
       console.log(data);
+      const newTicket: Ticket = {
+        id: generateRandomNumeric(), // Simulating an ID for the new ticket
+        user: data.email,
+        issue: data.issue,
+        description: data.description,
+        priority: data.priority as Priorty,
+        status: 'open',
+        createdAt: formatDateWithoutHour(new Date().toISOString()),
+      };
+      addTickets(newTicket);
       reset();
     } catch (error) {
       console.error(error);
@@ -177,7 +190,8 @@ const RequestForm: React.FC = () => {
           variant='filled'
           sx={{ width: '100%' }}
         >
-          Your request has been submitted successfully!
+          Your request has been submitted successfully <br />
+          You can track your request in the Tickets page!
         </Alert>
       </Snackbar>
     </Box>

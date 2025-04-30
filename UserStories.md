@@ -1,8 +1,8 @@
-- [ ] As a staff member, I want to view a list of employees so I can see who’s in the team.
-- [ ] As a staff member, I want to submit an IT request so I can get help quickly.
-- [ ] As a user, I want to view my submitted IT tickets so I can track their status.
-- [ ] As a user, I want to manage a simple to-do list to keep track of my tasks.
-- [ ] (Bonus) As an admin, I want to see Google Workspace-like info (last login, Drive storage, device status) for each user.
+- [x] As a staff member, I want to view a list of employees so I can see who’s in the team.
+- [x] As a staff member, I want to submit an IT request so I can get help quickly.
+- [x] As a user, I want to view my submitted IT tickets so I can track their status.
+- [x] As a user, I want to manage a simple to-do list to keep track of my tasks.
+- [x] (Bonus) As an admin, I want to see Google Workspace-like info (last login, Drive storage, device status) for each user.
 
 ### Suggested Layout / Pages
 
@@ -37,8 +37,8 @@
 
 ### Bonus Points
 
-- [ ] Reusable components (e.g., Card, FormField, TicketRow)
-- [ ] UX polish (e.g., loading states, empty states)
-- [ ] Accessibility considerations
-- [ ] Unit tests (even basic)
-- [ ] Use of Tailwind or MUI
+- [x] Reusable components (e.g., Card, FormField, TicketRow)
+- [x] UX polish (e.g., loading states, empty states)
+- [x] Accessibility considerations
+- [x] Unit tests (even basic)
+- [x] Use of Tailwind or MUI

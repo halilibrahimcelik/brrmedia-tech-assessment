@@ -1,32 +1,47 @@
 'use client';
 
-import { fetchedData } from '@/lib/api';
-import { ApiRoutes, Ticket } from '@/types';
 import { formatDateWithoutHour } from '@/utils';
-import { Card, Divider, Stack, Tooltip, Typography } from '@mui/material';
+import {
+  Card,
+  Divider,
+  Pagination,
+  Stack,
+  Tooltip,
+  Typography,
+} from '@mui/material';
 import Chip from '@mui/material/Chip';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import { useQuery } from '@tanstack/react-query';
-import { useEffect, useState } from 'react';
+
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ReportGmailerrorredOutlinedIcon from '@mui/icons-material/ReportGmailerrorredOutlined';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import CardSkeleton from './CardSkeleton';
+import { useTickets } from '@/providers/TicketProvider';
+import { useMemo, useState } from 'react';
 const Tickets: React.FC = () => {
-  const { data, error, isLoading } = useQuery<Ticket[]>({
-    queryKey: ['tickets'],
-    queryFn: () => fetchedData(ApiRoutes.GET_TICKETS),
-  });
+  const { error, isLoading, tickets } = useTickets();
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 9;
 
-  const [tickets, setTickets] = useState<Ticket[]>([]);
+  const totalPages = Math.ceil(tickets.length / itemsPerPage);
+
+  const currentTickets = useMemo(() => {
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return tickets.slice(startIndex, endIndex);
+  }, [tickets, page, itemsPerPage]);
+
+  const handlePageChange = (
+    event: React.ChangeEvent<unknown>,
+    value: number
+  ) => {
+    setPage(value);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const skeletonArray = Array.from({ length: 6 }, (_, index) => index + 1);
 
-  useEffect(() => {
-    if (data) {
-      setTickets(data);
-    }
-  }, [data]);
   const priorityColor = (priority: string) => {
     switch (priority) {
       case 'high':
@@ -52,7 +67,7 @@ const Tickets: React.FC = () => {
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {isLoading
           ? skeletonArray.map((skeleton) => <CardSkeleton key={skeleton} />)
-          : tickets.map((ticket) => (
+          : currentTickets.map((ticket) => (
               <Card
                 key={ticket.id}
                 className='p-4 flex flex-col justify-between shadow-md'
@@ -136,6 +151,17 @@ const Tickets: React.FC = () => {
               </Card>
             ))}
       </div>
+      {tickets.length > 0 && (
+        <div className='flex justify-center mt-6 mb-10'>
+          <Pagination
+            count={totalPages}
+            page={page}
+            onChange={handlePageChange}
+            color='primary'
+            size='large'
+          />
+        </div>
+      )}
     </>
   );
 };

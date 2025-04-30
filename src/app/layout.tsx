@@ -4,6 +4,7 @@ import ThemeProvider from '@/theme';
 import { ThemeContextProvider } from '@/theme/ThemeContext';
 import { QueryClientCtxProvider } from '@/providers/QueryClientCtxProvider';
 import TodoProvider from '@/providers/TodosProvider';
+import TicketsTodoProvider from '@/providers/TicketProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -24,15 +25,17 @@ export default function RootLayout({
     <QueryClientCtxProvider>
       <ThemeContextProvider>
         <ThemeProvider>
-          <TodoProvider>
-            <html lang='en'>
-              <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-              >
-                {children}
-              </body>
-            </html>
-          </TodoProvider>
+          <TicketsTodoProvider>
+            <TodoProvider>
+              <html lang='en'>
+                <body
+                  className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                >
+                  {children}
+                </body>
+              </html>
+            </TodoProvider>
+          </TicketsTodoProvider>
         </ThemeProvider>
       </ThemeContextProvider>
     </QueryClientCtxProvider>
