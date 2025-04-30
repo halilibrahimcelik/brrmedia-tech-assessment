@@ -10,13 +10,11 @@ The BRR Media Tech Assessment Dashboard is an internal web application designed 
 
 - Welcome banner with personalized greeting
 - Quick summary statistics showing open tickets and pending tasks
-- Latest updates section displaying recent activities
 
 ### Staff Directory
 
 - Comprehensive staff listing with detailed employee information
 - Display of key user data including name, role, email, and active status
-- Google Workspace-like information including last login time, drive storage usage, and device type
 
 ### IT Request System
 
@@ -29,16 +27,14 @@ The BRR Media Tech Assessment Dashboard is an internal web application designed 
 ### Tickets Management
 
 - View and track all submitted IT support tickets
-- Status tracking (Open, In Progress, Resolved)
+- Status tracking (Open, Closed)
 - Creation dates and ticket details
-- Sortable and filterable ticket list
 
 ### To-Do List
 
-- Personal task management system
+- Task management system
 - Create, edit, and delete functionality
 - Task completion tracking
-- Daily activity organization
 
 ## Technology Stack
 
