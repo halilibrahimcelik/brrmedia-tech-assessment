@@ -1,7 +1,17 @@
 import Todos from '@/components/pages/todos/Todos';
 import { Typography } from '@mui/material';
-import { NextPage } from 'next';
+import { Metadata, NextPage } from 'next';
 
+export const metadata: Metadata = {
+  title: 'Todos',
+  description: 'Todos',
+  openGraph: {
+    title: 'Todos',
+    description: 'Todos',
+    url: '/todos',
+    siteName: 'Todos',
+  },
+};
 const TodosPage: NextPage = () => {
   return (
     <div>
