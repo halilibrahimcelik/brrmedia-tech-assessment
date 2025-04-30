@@ -88,7 +88,7 @@ const TableSkeleton: React.FC<TableSkeletonProps> = ({
     );
   });
   return (
-    <div>
+    <div data-testid='table-loading-skeleton'>
       <Paper sx={{ width: '100%', mb: 2 }}>
         <TableContainer>
           <Table sx={{ minWidth: 750 }}>

@@ -7,16 +7,15 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
 import { ApiRoutes, StaffMember } from '@/types';
 import { formatDate } from '@/utils';
 import StaffTableHead from './TableHead';
 import TableSkeleton from './TableSkeleton';
 import { fetchedData } from '@/lib/api';
+import { Typography } from '@mui/material';
 export type Data = StaffMember;
 export type Order = 'asc' | 'desc';
 
@@ -57,7 +56,6 @@ const StaffTable: React.FC = () => {
   React.useEffect(() => {
     if (data) {
       setRows(data);
-      console.log('Data:', data);
     }
   }, [data]);
   const handleRequestSort = (
@@ -80,7 +78,6 @@ const StaffTable: React.FC = () => {
     setPage(0);
   };
 
-  // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
@@ -101,8 +98,8 @@ const StaffTable: React.FC = () => {
         rowCount={rows.length}
       />
     );
-  if (error) return <div>Error loading staff members</div>;
-  if (!data) return <div>No data found</div>;
+  if (error)
+    return <Typography variant='h5'>Error loading staff members</Typography>;
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
@@ -126,6 +123,17 @@ const StaffTable: React.FC = () => {
                 },
               }}
             >
+              {visibleRows.length === 0 && (
+                <TableRow
+                  sx={{
+                    padding: 10,
+                  }}
+                >
+                  <TableCell colSpan={7} align='center'>
+                    No staff members found
+                  </TableCell>
+                </TableRow>
+              )}
               {visibleRows.map((row, index) => {
                 const labelId = `enhanced-table-checkbox-${index}`;
 

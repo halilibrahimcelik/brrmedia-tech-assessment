@@ -2,14 +2,22 @@
 import * as Yup from 'yup';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { LoadingButton } from '@mui/lab';
-
-import { MenuItem, Box, Typography, Grid, Stack, Divider } from '@mui/material';
+import Button from '@mui/material/Button';
+import {
+  MenuItem,
+  Box,
+  Typography,
+  Grid,
+  Stack,
+  Divider,
+  Alert,
+} from '@mui/material';
 import { yupResolver } from '@hookform/resolvers/yup';
 import FormProvider from '@/components/ui/form/FormProvider';
 import RHFTextField from '@/components/ui/form/RHFTextField';
 import RHFSelect from '@/components/ui/form/RHFSelectField';
 import RHFUploadFile from '@/components/ui/form/RHFUploadFile';
+import Snackbar, { SnackbarCloseReason } from '@mui/material/Snackbar';
 
 type FormValues = {
   email: string;
@@ -20,7 +28,23 @@ type FormValues = {
 };
 
 const RequestForm: React.FC = () => {
-  // Static issue options
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpenSnackbar = () => {
+    setOpen(true);
+  };
+
+  const handleCloseSnackbar = (
+    event: React.SyntheticEvent | Event,
+    reason?: SnackbarCloseReason
+  ) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   const issueOptions = [
     'Unable to access shared drive',
     'Application crash on startup',
@@ -58,7 +82,7 @@ const RequestForm: React.FC = () => {
   const onSubmit = async (data: FormValues) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
-
+      handleOpenSnackbar();
       console.log(data);
       reset();
     } catch (error) {
@@ -130,17 +154,32 @@ const RequestForm: React.FC = () => {
               <RHFUploadFile name='file' />
             </Box>
           </Stack>
-          <LoadingButton
+          <Button
             fullWidth
             type='submit'
             variant='contained'
             size='large'
             loading={isSubmitting}
           >
-            Post
-          </LoadingButton>
+            Submit
+          </Button>
         </Grid>
       </FormProvider>
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity='success'
+          variant='filled'
+          sx={{ width: '100%' }}
+        >
+          Your request has been submitted successfully!
+        </Alert>
+      </Snackbar>
     </Box>
   );
 };
