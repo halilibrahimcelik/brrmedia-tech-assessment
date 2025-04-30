@@ -79,7 +79,7 @@ const ToggleColorMode = () => {
   };
   React.useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
-    if (savedTheme === 'dark') {
+    if (savedTheme) {
       if (savedTheme === 'dark') {
         setChecked(true);
       } else {
