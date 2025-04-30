@@ -1,10 +1,18 @@
 import StaffTable from '@/components/pages/staff-directory/StaffTable';
+import { Typography } from '@mui/material';
 import { NextPage } from 'next';
 
 const StaffDirectory: NextPage = () => {
   return (
     <div>
-      <h1 className='text-2xl font-bold mb-5 '>Staff Team</h1>
+      <Typography
+        variant='h4'
+        sx={{
+          marginY: 4,
+        }}
+      >
+        Staff Team
+      </Typography>
 
       <StaffTable />
     </div>

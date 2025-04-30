@@ -9,3 +9,9 @@ export const formatDate = (dateString: string) => {
 export const formatDateWithoutHour = (dateString: string) => {
   return format(new Date(dateString), 'MM/dd/yyyy');
 };
+
+export const generateRandomNumeric = (): number => {
+  const min = 100000;
+  const max = Number.MAX_SAFE_INTEGER;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};

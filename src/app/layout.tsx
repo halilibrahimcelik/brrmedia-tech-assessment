@@ -3,6 +3,7 @@ import './globals.css';
 import ThemeProvider from '@/theme';
 import { ThemeContextProvider } from '@/theme/ThemeContext';
 import { QueryClientCtxProvider } from '@/providers/QueryClientCtxProvider';
+import TodoProvider from '@/providers/TodosProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -23,13 +24,15 @@ export default function RootLayout({
     <QueryClientCtxProvider>
       <ThemeContextProvider>
         <ThemeProvider>
-          <html lang='en'>
-            <body
-              className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
-              {children}
-            </body>
-          </html>
+          <TodoProvider>
+            <html lang='en'>
+              <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+              >
+                {children}
+              </body>
+            </html>
+          </TodoProvider>
         </ThemeProvider>
       </ThemeContextProvider>
     </QueryClientCtxProvider>

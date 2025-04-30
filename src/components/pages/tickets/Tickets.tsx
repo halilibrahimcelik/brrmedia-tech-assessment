@@ -48,11 +48,7 @@ const Tickets: React.FC = () => {
     );
   }
   return (
-    <div>
-      <Typography variant='h4' color='text.primary' gutterBottom>
-        Tickets
-      </Typography>
-
+    <>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {isLoading
           ? skeletonArray.map((skeleton) => <CardSkeleton key={skeleton} />)
@@ -140,7 +136,7 @@ const Tickets: React.FC = () => {
               </Card>
             ))}
       </div>
-    </div>
+    </>
   );
 };
 export default Tickets;

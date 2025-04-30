@@ -8,13 +8,14 @@ export enum AppRoutes {
 export enum ApiRoutes {
   GET_STAFF = '/api/get-staff',
   GET_TICKETS = '/api/get-tickets',
+  GET_TODOS = '/api/get-todos',
 }
 export type StaffMember = {
   id: number;
   name: string;
   role: string;
   issue: string;
-  user: string;
+  email: string;
   status: 'active' | 'inactive';
   lastLogin: string;
   driveUsage: string;

@@ -20,20 +20,20 @@
      - [x] File input (simulate upload)
    - [x] “Submit Request” button
 4. **Tickets Page**
-   - [ ] List of submitted tickets
-   - [ ] Show: Issue Type, Status (Open, In Progress, Resolved), Created Date
+   - [x] List of submitted tickets
+   - [x] Show: Issue Type, Status (Open, In Progress, Resolved), Created Date
 5. **To-Do List Page**
-   - [ ] Add/Edit/Delete tasks
-   - [ ] Mark task as complete
+   - [x] Add/Edit/Delete tasks
+   - [x] Mark task as complete
 
 ### Technical Requirements
 
-- [ ] React with functional components and Hooks
-- [ ] State management using useState/useEffect (or Context/Redux if needed)
-- [ ] Responsive layout using any styling method
-- [ ] Simulated async (e.g., setTimeout) for ticket submission or API fetching
-- [ ] Bonus: TypeScript (optional)
-- [ ] Bonus: Simple router-based navigation (e.g., React Router)
+- [x] React with functional components and Hooks
+- [x] State management using useState/useEffect (or Context/Redux if needed)
+- [x] Responsive layout using any styling method
+- [x] Simulated async (e.g., setTimeout) for ticket submission or API fetching
+- [x] Bonus: TypeScript (optional)
+- [x] Bonus: Simple router-based navigation (e.g., React Router)
 
 ### Bonus Points
 

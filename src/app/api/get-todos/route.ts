@@ -3,12 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { delayMS } from '@/utils';
 
-const staffDataPath = path.join(
-  process.cwd(),
-  'public',
-  'data',
-  'tickets.json'
-);
+const staffDataPath = path.join(process.cwd(), 'public', 'data', 'todos.json');
 
 export const GET = async (): Promise<NextResponse> => {
   try {
@@ -16,14 +11,14 @@ export const GET = async (): Promise<NextResponse> => {
     const staffData = await fs.readFile(staffDataPath, 'utf-8');
     if (!staffData) {
       return NextResponse.json(
-        { error: 'Ticket data not found' },
+        { error: 'Todo list  is  not found' },
         { status: 404 }
       );
     }
     const parsedData = JSON.parse(staffData);
     return NextResponse.json(parsedData, { status: 200 });
   } catch (error) {
-    console.error('Error fetching  Tickets:', error);
+    console.error('Error fetching todos:', error);
     return NextResponse.json(
       { error: 'Internal Server Error' },
       { status: 500 }

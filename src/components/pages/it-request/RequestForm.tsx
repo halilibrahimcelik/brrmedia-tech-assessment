@@ -73,6 +73,7 @@ const RequestForm: React.FC = () => {
         maxWidth: 600,
         mx: 'auto',
         mt: 4,
+        mb: 4,
         p: 2,
         border: '1px solid #ccc',
         borderRadius: 2,
