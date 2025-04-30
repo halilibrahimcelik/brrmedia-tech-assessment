@@ -86,7 +86,6 @@ const RequestForm: React.FC = () => {
     try {
       await delayMS(700); // Simulate a network delay
       handleOpenSnackbar();
-      console.log(data);
       const newTicket: Ticket = {
         id: generateRandomNumeric(), // Simulating an ID for the new ticket
         user: data.email,
@@ -185,6 +184,7 @@ const RequestForm: React.FC = () => {
         onClose={handleCloseSnackbar}
       >
         <Alert
+          data-testid='success-it-request-alert'
           onClose={handleCloseSnackbar}
           severity='success'
           variant='filled'

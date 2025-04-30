@@ -21,7 +21,7 @@ const TicketsContext = createContext<TicketsContextTypes | undefined>(
   undefined
 );
 
-const TicketsTodoProvider = ({ children }: { children: ReactNode }) => {
+const TicketsProvider = ({ children }: { children: ReactNode }) => {
   const { data, isLoading, error } = useQuery<Ticket[]>({
     queryKey: ['tickets'],
     queryFn: () => fetchedData(ApiRoutes.GET_TICKETS),
@@ -62,4 +62,4 @@ export const useTickets = () => {
   return context;
 };
 
-export default TicketsTodoProvider;
+export default TicketsProvider;
