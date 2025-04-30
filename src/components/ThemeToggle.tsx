@@ -63,7 +63,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 const ToggleColorMode = () => {
-  const [checked, setChecked] = React.useState(false);
+  const [checked, setChecked] = React.useState(true);
   const { setMode } = useColorScheme();
   const { setTheme } = useThemeCtx();
 
@@ -78,11 +78,13 @@ const ToggleColorMode = () => {
     }
   };
   React.useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
     if (savedTheme === 'dark') {
-      setChecked(true);
-    } else {
-      setChecked(false);
+      if (savedTheme === 'dark') {
+        setChecked(true);
+      } else {
+        setChecked(false);
+      }
     }
   }, []);
 
